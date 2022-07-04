@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%; /* 1 rem = 10px*/
+
+  --font-size-body: 2rem;
+  --font-size-header: 4rem;
+
+  --background-body1: hsla(233, 100%, 97%, 1);
+  --background-body-before: hsla(218, 17%, 62%, 1);
+  --background-header-title: hsla(275, 18%, 79%, 1);
+  --background-span: hsla(312, 91%, 96%, 1);
+
+  --color-font-body: hsla(274, 84%, 12%, 1);
+  --color-font-span: hsla(232, 17%, 35%, 1);
+
+  --font-style-header:font-family: 'Staatliches', cursive;
+  --font-style-body:font-family: 'Palanquin', sans-serif;
+}
+
+body {
+  font-size: var(--font-size-body);
+  background-color: var(--background-body1);
+  font-family: var(--font-style-body);
+  color: var(--color-font-body);
+}
+body::before {
+  content: "";
+  height: 27.9rem;
+  width: 100%;
+  background-color: var(--background-body-before);
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-bottom: 3.6rem;
+  
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  margin: 3.2rem 0;
+  position: relative;
+  animation: body-animation 2s;
+}
+
+.title {
+  font-family: 'Staatliches', cursive;;
+  height: 4.9rem;
+  width: 100%;
+  background-color: var(--background-header-title);
+  margin-bottom: 4.3rem;
+
+}
+.title h1 {
+  font-size: var(--font-size-header);
+  text-align: center;
+  color: #fff;
+  font-family: var(--font-style-header);
+}
+main {
+  max-width: 320px;
+  margin: 0 auto;
+  
+}
+main p {
+  font-size: 'Palanquin', sans-serif;;
+  text-align: center;
+  line-height: 1.rem;
+  margin: 0 0 6.3rem;
+  
+  animation: body-animation 2s;
+  
+}
+
+.card {
+  
+  position: relative;
+  margin-bottom: 3.2rem;
+  animation: cards 2s;
+  transition: all 200ms;
+  
+}
+
+.card:hover{
+  transform: scale(1.1) ;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.card h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.5rem;
+  max-width: 11.2rem;
+  background-color: var(--background-span);
+  padding: 0 2.3rem;
+  position: absolute;
+  top: 1.6rem;
+  right: 1.6rem;
+
+  font-size: var(--font-style-body);
+  color: var( --color-font-span);
+  border-radius: 2rem;
+  
+
+}
+
+@keyframes cards{
+  0%{
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100%{
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes body-animation{
+0%{
+  opacity: 0;
+  transform: translateY(-15px);
+}
+100%{
+  opacity: 1;
+  transform: translateY(15px);
+}
+}
